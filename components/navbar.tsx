@@ -4,14 +4,10 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
-import { Sun, Moon } from 'lucide-react';
 
 export default function Navbar() {
   const t = useTranslations('nav');
   const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -19,7 +15,6 @@ export default function Navbar() {
   const currentLocale = pathname.startsWith('/en') ? 'en' : 'es';
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -101,22 +96,6 @@ export default function Navbar() {
             >
               {t('langEn')}
             </button>
-          </div>
-
-          {/* Dark mode toggle */}
-          {mounted && (
-            <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary border border-transparent hover:border-border/30 transition-all duration-300 cursor-pointer"
-              aria-label={theme === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro'}
-            >
-              {theme === 'dark' ? (
-                <Sun size={15} aria-hidden="true" />
-              ) : (
-                <Moon size={15} aria-hidden="true" />
-              )}
-            </button>
-          )}
         </div>
       </div>
     </header>
