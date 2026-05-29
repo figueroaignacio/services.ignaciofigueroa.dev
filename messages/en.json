@@ -13,7 +13,9 @@
     "subheadline": "I'm not an agency, and I don't sell templates. I'm a freelance developer who writes real code, builds solid products, and owns the outcome.",
     "ctaPrimary": "See services",
     "ctaSecondary": "Let's talk",
-    "techBadges": "Next.js · TypeScript · React · Node.js · Tailwind · i18n · AI"
+    "techBadges": "Next.js · TypeScript · React · Node.js · Tailwind · i18n · AI",
+    "capabilitiesTitle": "My capabilities:",
+    "capabilities": ["Web Development", "Artificial Intelligence", "Bots & Assistants", "APIs & Backend", "i18n Multilingual"]
   },
   "whyMe": {
     "title": "Why me, not an agency?",

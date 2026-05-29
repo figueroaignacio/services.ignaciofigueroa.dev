@@ -67,18 +67,18 @@ export default function Hero() {
           </Link>
         </div>
 
-        {/* Tech badges */}
+        {/* Capabilities badges */}
         <div className="flex flex-col gap-3">
           <span className="text-xs tracking-widest uppercase font-semibold text-muted-foreground/60">
-            Tech Stack & Capabilities
+            {t('capabilitiesTitle')}
           </span>
-          <div className="flex flex-wrap gap-2" aria-label="Tecnologías">
-            {techBadges.map((badge) => (
+          <div className="flex flex-wrap gap-2" aria-label="Capacidades">
+            {(t.raw('capabilities') as string[]).map((capability) => (
               <span
-                key={badge}
+                key={capability}
                 className="px-4 py-1.5 rounded-full text-xs font-medium border border-border bg-card/65 text-muted-foreground backdrop-blur-sm hover:border-accent hover:text-foreground transition-all duration-300 cursor-default"
               >
-                {badge}
+                {capability}
               </span>
             ))}
           </div>
