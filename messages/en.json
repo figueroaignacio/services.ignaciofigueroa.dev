@@ -2,6 +2,7 @@
   "nav": {
     "services": "Services",
     "whyMe": "Why Me",
+    "projects": "Projects",
     "pricing": "Pricing",
     "contact": "Contact",
     "langEs": "ES",
@@ -86,6 +87,12 @@
     "services": "Services",
     "pricing": "Pricing",
     "contact": "Contact"
+  },
+  "projects": {
+    "title": "Selected Work",
+    "subtitle": "A collection of bespoke digital products and websites built for startups, creators, and companies.",
+    "livePreview": "Visit Website",
+    "details": "Read case study"
   },
   "meta": {
     "title": "Web Development for Startups & Companies in Argentina",

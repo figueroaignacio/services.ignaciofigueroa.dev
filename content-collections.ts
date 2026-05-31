@@ -1,6 +1,6 @@
-import { defineCollection, defineConfig } from '@content-collections/core';
-import { marked } from 'marked';
-import { z } from 'zod';
+import { defineCollection, defineConfig } from '@content-collections/core'
+import { marked } from 'marked'
+import { z } from 'zod'
 
 const plans = defineCollection({
   name: 'plans',
@@ -24,11 +24,30 @@ const plans = defineCollection({
     content: z.string().optional(),
   }),
   transform: async (doc) => {
-    const html = await marked(doc.content ?? '');
-    return { ...doc, html };
+    const html = await marked(doc.content ?? '')
+    return { ...doc, html }
   },
-});
+})
+
+const projects = defineCollection({
+  name: 'projects',
+  directory: 'content/projects',
+  include: '**/*.mdx',
+  schema: z.object({
+    slug: z.string(),
+    locale: z.enum(['en', 'es']),
+    name: z.string(),
+    description: z.string(),
+    livePreview: z.string(),
+    image: z.string(),
+    content: z.string().optional(),
+  }),
+  transform: async (doc) => {
+    const html = await marked(doc.content ?? '')
+    return { ...doc, html }
+  },
+})
 
 export default defineConfig({
-  content: [plans],
-});
+  content: [plans, projects],
+})

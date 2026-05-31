@@ -2,6 +2,7 @@
   "nav": {
     "services": "Servicios",
     "whyMe": "Por qué yo",
+    "projects": "Proyectos",
     "pricing": "Precios",
     "contact": "Contacto",
     "langEs": "ES",
@@ -86,6 +87,12 @@
     "services": "Servicios",
     "pricing": "Precios",
     "contact": "Contacto"
+  },
+  "projects": {
+    "title": "Trabajo Seleccionado",
+    "subtitle": "Una colección de productos digitales y sitios web a medida construidos para startups, creadores y empresas.",
+    "livePreview": "Visitar Sitio",
+    "details": "Ver caso de estudio"
   },
   "meta": {
     "title": "Desarrollo Web para Startups y Empresas en Argentina",
