@@ -1,10 +1,9 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import { withContentCollections } from '@content-collections/next';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
-const nextConfig: NextConfig = {
-  // Turbopack is the default bundler in Next.js 16
-};
+const nextConfig: NextConfig = {};
 
-export default withNextIntl(nextConfig);
+export default withContentCollections(withNextIntl(nextConfig));

@@ -1,13 +1,21 @@
 'use client'
 
 import { ArrowRight, Check } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useState } from 'react'
+import Link from 'next/link'
 
 type Currency = 'ARS' | 'USD'
 
+const slugMap: Record<string, string> = {
+  starterName: 'starter',
+  proName: 'pro',
+  customName: 'custom',
+}
+
 export default function Pricing() {
   const t = useTranslations('pricing')
+  const locale = useLocale()
   const [currency, setCurrency] = useState<Currency>('ARS')
 
   const tiers = [
@@ -248,8 +256,18 @@ export default function Pricing() {
                     ))}
                   </ul>
 
+                  <Link
+                    href={`/${locale}/plan/${slugMap[tier.nameKey]}`}
+                    className="text-[11px] tracking-widest uppercase font-sans font-light transition-colors duration-300 text-center"
+                    style={{ color: 'var(--muted-foreground)', opacity: 0.5 }}
+                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--primary)')}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'var(--muted-foreground)'; (e.currentTarget as HTMLElement).style.opacity = '0.5'; }}
+                  >
+                    {locale === 'es' ? 'Ver detalles del plan' : 'See plan details'}
+                  </Link>
+
                   <a
-                    href="#contact"
+                    href={`/${locale}#contact`}
                     aria-label={`${t('cta')} — ${t(tier.nameKey)}`}
                     className="group/cta mt-2 inline-flex items-center justify-center gap-2 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 active:scale-95"
                     style={

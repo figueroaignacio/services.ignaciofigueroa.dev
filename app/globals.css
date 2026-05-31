@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+
 :root {
   --background: #120c09;
   --foreground: #f4efea;
@@ -23,6 +24,7 @@
   --grid-color: rgba(212, 178, 144, 0.03);
   --shadow-lg: 0 10px 40px -10px rgba(0, 0, 0, 0.7);
 }
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -62,7 +64,7 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-.why-me-card:hover > [aria-hidden="true"]:first-of-type {
+.why-me-card:hover > [aria-hidden='true']:first-of-type {
   color: rgba(212, 178, 144, 0.09) !important;
 }
 
@@ -71,8 +73,12 @@ body {
 }
 
 @keyframes shimmer-x {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 .glow-edge {
@@ -81,11 +87,13 @@ body {
 }
 
 .pricing-card--pro {
-  box-shadow: 0 0 0 0 rgba(212,178,144,0);
+  box-shadow: 0 0 0 0 rgba(212, 178, 144, 0);
   transition: box-shadow 0.5s ease;
 }
 .pricing-card--pro:hover {
-  box-shadow: 0 24px 60px -16px rgba(212,178,144,0.18), inset 0 0 40px -20px rgba(212,178,144,0.06);
+  box-shadow:
+    0 24px 60px -16px rgba(212, 178, 144, 0.18),
+    inset 0 0 40px -20px rgba(212, 178, 144, 0.06);
 }
 
 .pricing-toggle {
@@ -94,4 +102,121 @@ body {
 
 .pricing-card:not(.pricing-card--pro):hover {
   background: #1d140f !important;
+}
+
+.plan-prose h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.plan-prose h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--foreground);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.plan-prose p {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  margin-bottom: 1.1rem;
+  color: var(--muted-foreground);
+}
+
+.plan-prose strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.plan-prose ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.1rem;
+}
+
+.plan-prose ul li {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.plan-prose ul li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.plan-prose ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: plan-ol;
+  margin-bottom: 1.1rem;
+}
+
+.plan-prose ol li {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  padding-left: 2rem;
+  position: relative;
+  counter-increment: plan-ol;
+  margin-bottom: 0.4rem;
+}
+
+.plan-prose ol li::before {
+  content: counter(plan-ol, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  color: var(--primary);
+  opacity: 0.6;
+  top: 0.2rem;
+  letter-spacing: 0.05em;
+}
+
+.plan-back-link {
+  color: var(--muted-foreground);
+}
+.plan-back-link:hover {
+  color: var(--primary);
+}
+
+.plan-cta--highlighted {
+  padding: 0.85rem 1.5rem;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 0 24px -4px rgba(212, 178, 144, 0.35);
+}
+.plan-cta--highlighted:hover {
+  background: var(--accent);
+}
+
+.plan-cta--default {
+  padding: 0.75rem 1.25rem;
+  border: 1px solid rgba(42, 30, 23, 0.9);
+  color: var(--muted-foreground);
+}
+.plan-cta--default:hover {
+  color: var(--foreground);
+  border-color: rgba(212, 178, 144, 0.4);
+}
+
+.plan-other-card {
+  background: var(--card);
+  border-color: var(--border);
+}
+.plan-other-card:hover {
+  border-color: rgba(212, 178, 144, 0.3);
 }
