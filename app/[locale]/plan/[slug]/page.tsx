@@ -307,8 +307,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params
   const plan = allPlans.find((p) => p.slug === slug && p.locale === locale)
   if (!plan) return {}
+  const ogImage = `/images/og/og-image-${locale}.png`
   return {
     title: `${plan.name} Plan — Ignacio Figueroa`,
     description: plan.tagline,
+    openGraph: {
+      title: `${plan.name} Plan — Ignacio Figueroa`,
+      description: plan.tagline,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${plan.name} Plan`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${plan.name} Plan — Ignacio Figueroa`,
+      description: plan.tagline,
+      images: [ogImage],
+    },
   }
 }

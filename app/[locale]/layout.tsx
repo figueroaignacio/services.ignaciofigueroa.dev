@@ -64,6 +64,7 @@ export async function generateMetadata({
   const { locale } = await params
   const messages = await getMessages({ locale })
   const meta = (messages as Record<string, Record<string, string>>).meta
+  const ogImage = `/images/og/og-image-${locale}.png`
 
   return {
     title: meta?.title ?? 'Desarrollo Web Freelance — Argentina',
@@ -77,11 +78,20 @@ export async function generateMetadata({
       siteName: 'Ignacio Figueroa — Dev',
       locale: locale === 'es' ? 'es_AR' : 'en_US',
       alternateLocale: locale === 'es' ? ['en_US'] : ['es_AR'],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: meta?.title ?? 'Ignacio Figueroa — Dev',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: meta?.title,
       description: meta?.description,
+      images: [ogImage],
     },
     alternates: {
       canonical: `${BASE_URL}/${locale}`,
