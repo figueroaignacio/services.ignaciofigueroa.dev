@@ -3,7 +3,6 @@ import { Code2, Layers, MessageSquare, DollarSign } from 'lucide-react';
 
 const icons = [Code2, Layers, MessageSquare, DollarSign];
 
-// Unique radial positions for each card orb — asymmetric, editorial
 const orbs = [
   'radial-gradient(ellipse 80% 60% at 110% 120%, rgba(212,178,144,0.13) 0%, transparent 70%)',
   'radial-gradient(ellipse 70% 70% at -10% 110%, rgba(229,193,157,0.10) 0%, transparent 65%)',
@@ -52,7 +51,6 @@ export default function WhyMe() {
       aria-labelledby="why-me-heading"
       className="py-28 relative overflow-hidden"
     >
-      {/* Section-level ambient glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
@@ -75,14 +73,12 @@ export default function WhyMe() {
                 className="why-me-card group relative overflow-hidden bg-card/60 backdrop-blur-sm p-10 transition-all duration-700"
                 style={{ '--orb': orbs[i] } as React.CSSProperties}
               >
-                {/* Unique gradient orb per card */}
                 <div
                   className="absolute inset-0 opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                   style={{ background: orbs[i] }}
                   aria-hidden="true"
                 />
 
-                {/* Bottom glowing edge that reveals on hover */}
                 <div
                   className="absolute bottom-0 left-0 right-0 h-[1px] opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
                   style={{
@@ -92,7 +88,6 @@ export default function WhyMe() {
                   aria-hidden="true"
                 />
 
-                {/* Oversized editorial number — watermark */}
                 <div
                   className="absolute top-0 right-0 font-heading font-bold leading-none select-none pointer-events-none"
                   style={{
@@ -109,7 +104,6 @@ export default function WhyMe() {
                 </div>
 
                 <div className="relative z-10 flex flex-col h-full">
-                  {/* Number + Icon row */}
                   <div className="flex items-center justify-between mb-8">
                     <span
                       className="font-heading text-xs tracking-[0.25em] uppercase text-primary/50 group-hover:text-primary transition-colors duration-500"
@@ -123,18 +117,15 @@ export default function WhyMe() {
                     </div>
                   </div>
 
-                  {/* Divider */}
                   <div
                     className="h-[1px] bg-border/40 mb-8 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"
                     aria-hidden="true"
                   />
 
-                  {/* Title */}
                   <h3 className="font-heading text-2xl font-light text-foreground tracking-tight mb-4 leading-snug">
                     {t(card.titleKey)}
                   </h3>
 
-                  {/* Description */}
                   <p className="text-sm text-muted-foreground/80 leading-relaxed font-sans font-light mt-auto">
                     {t(card.descKey)}
                   </p>

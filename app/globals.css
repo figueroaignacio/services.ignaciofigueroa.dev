@@ -62,17 +62,14 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* Why Me — brighten watermark number on card hover */
 .why-me-card:hover > [aria-hidden="true"]:first-of-type {
   color: rgba(212, 178, 144, 0.09) !important;
 }
 
-/* Services — divide-y border color */
 .service-row {
   border-color: rgba(42, 30, 23, 0.8);
 }
 
-/* Glowing edge shimmer */
 @keyframes shimmer-x {
   0%   { background-position: -200% center; }
   100% { background-position: 200% center; }
@@ -83,7 +80,6 @@ body {
   animation: shimmer-x 2.5s linear infinite;
 }
 
-/* Pricing — pro card top glow pulse */
 .pricing-card--pro {
   box-shadow: 0 0 0 0 rgba(212,178,144,0);
   transition: box-shadow 0.5s ease;
@@ -92,12 +88,10 @@ body {
   box-shadow: 0 24px 60px -16px rgba(212,178,144,0.18), inset 0 0 40px -20px rgba(212,178,144,0.06);
 }
 
-/* Pricing — currency toggle indicator */
 .pricing-toggle {
   isolation: isolate;
 }
 
-/* Pricing — non-pro card hover */
 .pricing-card:not(.pricing-card--pro):hover {
   background: #1d140f !important;
 }

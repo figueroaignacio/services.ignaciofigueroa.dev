@@ -49,7 +49,6 @@ export default function Pricing() {
         background: 'linear-gradient(180deg, var(--background) 0%, var(--muted) 50%, var(--background) 100%)',
       }}
     >
-      {/* Ambient center glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
@@ -60,8 +59,6 @@ export default function Pricing() {
       />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
-
-        {/* Header + toggle row */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8 mb-16">
           <div>
             <span className="text-xs tracking-[0.3em] uppercase font-semibold text-primary/60 mb-4 block">
@@ -76,14 +73,12 @@ export default function Pricing() {
             </h2>
           </div>
 
-          {/* Currency toggle — sliding pill */}
           <div
             className="pricing-toggle relative flex items-center gap-0 p-1 rounded-full w-fit shrink-0 border border-border/60"
             role="group"
             aria-label="Select currency"
             style={{ background: 'var(--muted)' }}
           >
-            {/* Sliding background indicator */}
             <div
               className="toggle-indicator absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full transition-transform duration-300 ease-in-out"
               style={{
@@ -108,7 +103,6 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Pricing cards */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.12fr_1fr] gap-px bg-border/30 rounded-[var(--radius-xl)] overflow-hidden border border-border/30 items-stretch">
           {tiers.map((tier) => {
             const features = t.raw(tier.featuresKey) as string[];
@@ -119,9 +113,7 @@ export default function Pricing() {
                 key={tier.nameKey}
                 aria-label={t(tier.nameKey)}
                 className={`pricing-card group relative flex flex-col overflow-hidden transition-all duration-500 ${
-                  tier.highlighted
-                    ? 'pricing-card--pro'
-                    : ''
+                  tier.highlighted ? 'pricing-card--pro' : ''
                 }`}
                 style={{
                   background: tier.highlighted
@@ -130,7 +122,6 @@ export default function Pricing() {
                   padding: tier.highlighted ? '2.75rem 2rem' : '2.25rem 2rem',
                 }}
               >
-                {/* Pro: top golden glow bar */}
                 {tier.highlighted && (
                   <div
                     className="absolute top-0 left-0 right-0 h-[2px]"
@@ -143,7 +134,6 @@ export default function Pricing() {
                   />
                 )}
 
-                {/* Pro: ambient radial fill */}
                 {tier.highlighted && (
                   <div
                     className="absolute inset-0 pointer-events-none"
@@ -155,7 +145,6 @@ export default function Pricing() {
                   />
                 )}
 
-                {/* "Most popular" badge */}
                 {tier.highlighted && (
                   <div className="absolute top-6 right-6">
                     <span
@@ -172,8 +161,6 @@ export default function Pricing() {
                 )}
 
                 <div className="relative z-10 flex flex-col h-full gap-7">
-
-                  {/* Plan name + for */}
                   <div>
                     <h3
                       className="font-heading font-light tracking-tight mb-2 transition-colors duration-300"
@@ -192,13 +179,12 @@ export default function Pricing() {
                     </p>
                   </div>
 
-                  {/* Price — editorial large */}
                   <div className="pb-7" style={{ borderBottom: '1px solid rgba(42,30,23,0.8)' }}>
                     <p
                       className="font-heading font-light leading-none tracking-tight"
                       style={{
                         fontSize: tier.highlighted ? '2.6rem' : '2rem',
-                        color: tier.highlighted ? 'var(--foreground)' : 'var(--foreground)',
+                        color: 'var(--foreground)',
                         opacity: tier.highlighted ? 1 : 0.85,
                       }}
                     >
@@ -212,7 +198,6 @@ export default function Pricing() {
                     </p>
                   </div>
 
-                  {/* Features — hairline-separated rows */}
                   <ul
                     className="flex flex-col flex-1"
                     aria-label={`Features of ${t(tier.nameKey)}`}
@@ -249,7 +234,6 @@ export default function Pricing() {
                     ))}
                   </ul>
 
-                  {/* CTA */}
                   <a
                     href="#contact"
                     aria-label={`${t('cta')} — ${t(tier.nameKey)}`}
@@ -299,7 +283,6 @@ export default function Pricing() {
           })}
         </div>
 
-        {/* Footnote */}
         <p
           className="text-[11px] tracking-wide text-center font-light mt-8"
           style={{ color: 'var(--muted-foreground)', opacity: 0.5 }}

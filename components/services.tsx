@@ -31,7 +31,6 @@ export default function Services() {
         background: 'linear-gradient(180deg, var(--muted) 0%, var(--background) 100%)',
       }}
     >
-      {/* Subtle noise texture overlay */}
       <div
         className="absolute inset-0 opacity-[0.015] pointer-events-none"
         aria-hidden="true"
@@ -42,7 +41,6 @@ export default function Services() {
       />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        {/* Header */}
         <div className="mb-16">
           <span className="text-xs tracking-[0.3em] uppercase font-semibold text-primary/60 mb-4 block">
             Core Offerings
@@ -58,7 +56,6 @@ export default function Services() {
           </h2>
         </div>
 
-        {/* Service rows — editorial list layout */}
         <div
           className="flex flex-col divide-y"
           style={{ borderTop: '1px solid rgba(42,30,23,0.8)', borderBottom: '1px solid rgba(42,30,23,0.8)' }}
@@ -73,7 +70,6 @@ export default function Services() {
                 className="service-row group relative flex items-start gap-6 md:gap-10 py-8 md:py-10 transition-all duration-500 cursor-default overflow-hidden"
                 style={{ borderColor: 'rgba(42,30,23,0.8)' }}
               >
-                {/* Sliding fill background on hover */}
                 <div
                   className="absolute inset-0 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out pointer-events-none"
                   style={{
@@ -82,14 +78,12 @@ export default function Services() {
                   aria-hidden="true"
                 />
 
-                {/* Left accent bar */}
                 <div
                   className="absolute left-0 top-0 bottom-0 w-[2px] origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-out"
                   style={{ background: 'var(--primary)' }}
                   aria-hidden="true"
                 />
 
-                {/* Number */}
                 <span
                   className="relative z-10 font-heading text-xs tracking-[0.2em] text-muted-foreground/30 group-hover:text-primary/60 transition-colors duration-500 pt-1 shrink-0 w-8 text-right"
                   aria-hidden="true"
@@ -97,20 +91,17 @@ export default function Services() {
                   {num}
                 </span>
 
-                {/* Icon circle */}
                 <div
                   className="relative z-10 w-11 h-11 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground group-hover:border-primary/50 group-hover:text-primary group-hover:bg-primary/10 transition-all duration-500 shrink-0 mt-0.5"
                 >
                   <Icon size={17} strokeWidth={1.5} aria-hidden="true" />
                 </div>
 
-                {/* Content */}
                 <div className="relative z-10 flex-1 min-w-0">
                   <div className="flex flex-col md:flex-row md:items-baseline md:gap-8">
                     <h3 className="font-heading text-xl md:text-2xl font-light text-foreground tracking-tight group-hover:text-accent transition-colors duration-500 mb-2 md:mb-0 shrink-0">
                       {t(card.titleKey)}
                     </h3>
-                    {/* Dotted rule between title and desc on desktop */}
                     <div
                       className="hidden md:block flex-1 border-b border-dashed border-border/30 mb-1.5 group-hover:border-primary/20 transition-colors duration-500"
                       aria-hidden="true"
@@ -125,7 +116,6 @@ export default function Services() {
           })}
         </div>
 
-        {/* Bottom stat bar */}
         <div
           className="mt-16 flex flex-wrap gap-px bg-border/30 rounded-[var(--radius-lg)] overflow-hidden border border-border/30"
         >
