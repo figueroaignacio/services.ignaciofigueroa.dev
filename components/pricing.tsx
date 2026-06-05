@@ -166,20 +166,6 @@ export default function Pricing() {
                   />
                 )}
 
-                {tier.highlighted && (
-                  <div className="absolute top-6 right-6">
-                    <span
-                      className="text-[9px] tracking-[0.25em] uppercase font-semibold px-3 py-1 rounded-full border"
-                      style={{
-                        color: 'var(--primary)',
-                        borderColor: 'rgba(212,178,144,0.3)',
-                        background: 'rgba(212,178,144,0.08)',
-                      }}>
-                      {t('highlighted')}
-                    </span>
-                  </div>
-                )}
-
                 <div className="relative z-10 flex flex-col h-full gap-7">
                   <div>
                     <h3
@@ -222,7 +208,9 @@ export default function Pricing() {
                           ? 'Pesos argentinos'
                           : 'US dollars · fixed'}
                       </span>
-                      <span style={{ color: 'var(--primary)' }} className="font-semibold">
+                      <span
+                        style={{ color: 'var(--primary)' }}
+                        className="font-semibold">
                         · {monthlyPrice}
                       </span>
                     </p>
